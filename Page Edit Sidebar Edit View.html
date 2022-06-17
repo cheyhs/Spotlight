@@ -1,0 +1,58 @@
+<!-- BEGIN HEADER -->
+<div class="sidebar-editing-detail">
+  <h1 class="sidebar-editing-heading">Add Item</h1>
+  <div class="bb-form-group">
+    <label for="txtTitle">Title:</label>
+    <SWCtrl controlname="Textbox" props="ID:txtTitle;Class:bb-input bb-input-required required;DatePicker:;Disabled:;ErrorMessage:Oops! You didn’t enter a title.;Format:;OnChange:;MaxLength:500;ReadOnly:;Size:;Style:width;TabIndex:;Tooltip:Title;ValidationType:text;Value:[$Title$];" />
+  </div>
+  <div class="bb-form-group">
+    <SWCtrl controlname="Label" props="ID:lblImage;Caption:Image;Class:bb-label;For:txtFileLink;Style:;" />
+    <input type="text" id="txtFileLink" name="swdata-FileLink" class="bb-input bb-required required" maxlength="500" errormessage="This cannot be blank." validaiontype="text" value="[$FileLink$]" />
+    <SWCtrl controlname="ImageWizard" props="ID:wizImage;ImageFileControl:txtFileLink;AltTextControl:;HeightControl:txtHeight;WidthControl:txtWidth;AlignmentControl:;BorderControl:;EnableCropper:false;Options:Local,Cloud,Existing,Shared;" />
+  </div>
+  <div class="bb-form-group">
+    <SWCtrl controlname="Label" props="ID:lblAltText;Caption:Alternative Text:;Class:bb-label;For:txtAlertText;Style:;" />
+    <SWCtrl controlname="UARollover" props="ID:UARollover1;Message:Entering alternative text ensures that your images are ADA compliant. The text will be read by screen readers and will display when a visitor hovers over your image. There is a 125 character limit.;TargetID:lblAltText;" />
+    <SWCtrl controlname="Textbox" props="ID:txtAltText;Class:bb-input bb-required required;DatePicker:;Disabled:;ErrorMessage:This cannot be blank.;Format:;OnChange:;MaxLength:125;ReadOnly:;Size:;Style:;TabIndex:;Tooltip:AltText;ValidationType:;Value:[$AltText$];DefaultValue:;" />
+  </div>
+  <div class="bb-form-group">
+    <SWCtrl controlname="Label" props="ID:lblWidth;Caption:Width;Class:bb-label;For:txtWidth;Style:;" />
+    <input name="swdata-Width" tabindex="-32768" class="bb-input optional" id="txtWidth" type="text" maxlength="4" value="[$Width$]" errormessage="Please enter a valid number." validationtype="numeric" onblur="ImgResetSize('width');">
+    <input type="hidden" id="hidOldWidth" value="" >
+  </div>
+  <div class="bb-form-group">
+    <SWCtrl controlname="Label" props="ID:lblHeight;Caption:Height;Class:bb-label;For:txtHeight;Style:;" />
+    <input type="text" id="txtHeight" class="bb-input optional" errormessage="Please enter a valid number." maxlength="4" style="" tabindex="" validationtype="numeric" name="swdata-Height" value="[$Height$]" onblur="ImgResetSize('height');">
+    <input type="hidden" id="hidOldHeight" value="">
+  </div>
+  <div class="bb-form-group">
+    <label for="txtEditor">Body:</label>
+    <SWCtrl controlname="SimpleEditor" props="ID:txtSimpleEditor;Mode:1;Width:100%;Height:400;StripInvalidMarkup:false;AdvContextMenu:true;Source:[$Body$];" />
+  </div>
+  <div class="bb-form-group">
+    <label class="bb-label">Tags:<span>Tagging allows you to filter records.</span></label>
+    <SWCtrl controlname="TagsControl" props="CustomTitle:Enter a comma separated list of tags for this record.;" />
+  </div>
+  <div class="bb-form-group">
+    <label class="bb-label">Display Duration</label>
+  </div>
+  <div class="bb-margin-indent-one">
+    <div class="bb-form-group">
+      <label class="bb-label">Start Date:</label>
+      <swctrl controlname="StartDate" props="" />
+      <label class="bb-label">End Date:</label>
+      <swctrl controlname="EndDate" props="" />
+    </div>
+  </div>
+  <div class="bb-form-group">
+    <swctrl controlname="PermissionControl" props="ID:PermissionsControl1;DisplayTitle:true;CustomTitle:Viewers;Description:By default all website visitors can view this record.  You can limit who is able to view it by adding specific users or groups.;NoRecordsMessage:Currently all visitors can view this record." />
+  </div>
+  <div class="bb-form-group">
+    <swctrl controlname="ActiveIndicator" props="" />
+  </div>
+  <div class="bb-buttons bb-buttons-left sidebar-editing-pin-bottom">
+    <SWCtrl controlname="Button" props="ID:btnButton;Caption:Save;Class:bb-button bb-button-primary;Disabled:;OnClick:SaveButtonClick('00000000-0000-0000-0000-000000000000');Size:;Style:;TabIndex:;Tooltip:Save my record.;GrowlMessage:Success! You edited your record.;usebuttontag:true;" />
+    <SWCtrl controlname="Button" props="ID:btnCancel;Caption:Cancel;Class:bb-button;Disabled:;OnClick:CancelButtonClick('00000000-0000-0000-0000-000000000000');Size:;Style:;TabIndex:;Tooltip:I changed my mind so cancel this.;usebuttontag:true;" />
+  </div>
+</div>
+<!-- END HEADER -->

@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Module ID="9001">
+    <AssetVirtualPath>/cms/lib/NV50010907/Centricity/Module/</AssetVirtualPath>
+    <ModuleName>Spotlight v2</ModuleName>
+    <Slug>Spotlight v2</Slug>
+    <ModuleCode>FX</ModuleCode>
+    <MinProdVersion>1.2</MinProdVersion>
+    <SWModuleID>0</SWModuleID>
+    <AppVersion>2</AppVersion>
+    <ReleaseNotes>06.17.2022 - Ricardo Torres - Initial Release</ReleaseNotes>
+    <ModuleLibraryID>32d9e0f1-4d91-4235-929b-8398bcdca568</ModuleLibraryID>
+    <Description><![CDATA[Display images with a description in a grid-like format.]]></Description>
+    <Icon></Icon>
+    <DefaultViews>
+        <SiteManager>52f65cc0-9707-426c-af18-32bbadadff0b</SiteManager>
+        <Placeholder>00000000-0000-0000-0000-000000000000</Placeholder>
+        <Sidebar>ce00e0c2-266f-4cd7-b03b-1fbc80aa0092</Sidebar>
+        <New>9aa6c953-d475-4a16-a1f4-ea8c27d61660</New>
+        <Website>01450205-9603-4274-8e01-3caf9e3aa48d</Website>
+        <Mobile>00000000-0000-0000-0000-000000000000</Mobile>
+        <PWSConfig>00000000-0000-0000-0000-000000000000</PWSConfig>
+        <PWS>00000000-0000-0000-0000-000000000000</PWS>
+        <MCAConfig>00000000-0000-0000-0000-000000000000</MCAConfig>
+        <Stream>00000000-0000-0000-0000-000000000000</Stream>
+        <Detail>00000000-0000-0000-0000-000000000000</Detail>
+        <PWSAggregatorType>0</PWSAggregatorType>
+        <PWSColWidth>1</PWSColWidth>
+        <PWSAggregateField></PWSAggregateField>
+        <PWSAggregateLimit>0</PWSAggregateLimit>
+    </DefaultViews>
+    <SocialOptions>&lt;SocialOptions&gt;&lt;ContributionOptions&gt;&lt;AllowContribution&gt;False&lt;/AllowContribution&gt;&lt;ViewID&gt;00000000-0000-0000-0000-000000000000&lt;/ViewID&gt;&lt;ApprovalViewID&gt;00000000-0000-0000-0000-000000000000&lt;/ApprovalViewID&gt;&lt;DialogSize&gt;Medium&lt;/DialogSize&gt;&lt;/ContributionOptions&gt;&lt;CommentOptions&gt;&lt;AllowComments&gt;False&lt;/AllowComments&gt;&lt;CommentType /&gt;&lt;/CommentOptions&gt;&lt;RatingOptions&gt;&lt;AllowRating&gt;False&lt;/AllowRating&gt;&lt;RatingType&gt;I&lt;/RatingType&gt;&lt;/RatingOptions&gt;&lt;SyndicationOptions&gt;&lt;AllowSyndication&gt;False&lt;/AllowSyndication&gt;&lt;Title /&gt;&lt;Description /&gt;&lt;ViewID&gt;00000000-0000-0000-0000-000000000000&lt;/ViewID&gt;&lt;/SyndicationOptions&gt;&lt;ITunesFeedOptions&gt;&lt;AllowiTunesFeed&gt;False&lt;/AllowiTunesFeed&gt;&lt;Title /&gt;&lt;Description /&gt;&lt;Author /&gt;&lt;Image /&gt;&lt;Duration /&gt;&lt;MediaURL /&gt;&lt;ViewID&gt;00000000-0000-0000-0000-000000000000&lt;/ViewID&gt;&lt;/ITunesFeedOptions&gt;&lt;FollowOptions&gt;&lt;AllowFollow&gt;False&lt;/AllowFollow&gt;&lt;/FollowOptions&gt;&lt;GroupingOptions&gt;&lt;AllowGrouping&gt;False&lt;/AllowGrouping&gt;&lt;GroupByField /&gt;&lt;RecentLinkTitle /&gt;&lt;ShowRecentItems&gt;True&lt;/ShowRecentItems&gt;&lt;/GroupingOptions&gt;&lt;RecordLimitOptions&gt;&lt;RecordLimit&gt;0&lt;/RecordLimit&gt;&lt;MoreRecordsView&gt;aaf83e79-cb1c-4c50-a718-6dbb075a88cd&lt;/MoreRecordsView&gt;&lt;/RecordLimitOptions&gt;&lt;ContentModeration&gt;&lt;Title /&gt;&lt;Description /&gt;&lt;ViewID&gt;00000000-0000-0000-0000-000000000000&lt;/ViewID&gt;&lt;/ContentModeration&gt;&lt;FilteringOptions&gt;&lt;AllowTagging&gt;True&lt;/AllowTagging&gt;&lt;DisplayTagList&gt;False&lt;/DisplayTagList&gt;&lt;/FilteringOptions&gt;&lt;ShareOptions&gt;&lt;AllowShare&gt;False&lt;/AllowShare&gt;&lt;MetaTitle /&gt;&lt;MetaDescription /&gt;&lt;MetaImage /&gt;&lt;/ShareOptions&gt;&lt;/SocialOptions&gt;</SocialOptions>
+    <TableDefinition>
+        <![CDATA[
+        <Tables>
+            <Table Name="Spotlight">
+                <Fields>
+                    <Field Name="Title" Type="Text" Required="false" DefaultValue="" FriendlyName="" />
+                    <Field Name="FileLink" Type="Text" Required="true" DefaultValue="" FriendlyName="" />
+                    <Field Name="AltText" Type="Text" Required="true" DefaultValue="" FriendlyName="" />
+                    <Field Name="Width" Type="Number" Required="false" DefaultValue="" FriendlyName="" />
+                    <Field Name="Height" Type="Number" Required="false" DefaultValue="" FriendlyName="" />
+                    <Field Name="Body" Type="Text" Required="false" DefaultValue="" FriendlyName="" />
+                </Fields>
+            </Table>
+        </Tables>]]>
+    </TableDefinition>
+    <Views>
+        <View>
+            <ViewName>List View (SM)</ViewName>
+            <ViewGUID>52f65cc0-9707-426c-af18-32bbadadff0b</ViewGUID>
+            <ViewHeader><![CDATA[
+<link rel="stylesheet" href="//cdn.cheyennehs.org/modules/Spotlight/css/spotlight.min.css"/>
+<style type="text/css">
+    div#persons-page-public ul li div.image {
+        width: 192px;
+        height: 192px;
+    }
+
+    div#persons-page-public ul li p {
+        margin-left: 230px;
+    }
+</style>
+<div id="persons-page-public">
+    <div id="items">
+        <ul class="Indefinite">
+]]></ViewHeader>
+            <ViewItem><![CDATA[
+          <li>
+            <div class="image" style="background-image: url('[$FileLink$]');[$IF ("[$Width$]" != "")$]width:[$Width]px;[$END IF$][$IF ("[$Height$]" != "")$]height:[$Height$]px;[$END IF$]" alt="[$AltText$]"></div>
+            <h3 role="heading" aria-level="2">[$Title$]</h3>
+            <div>
+              [$Body$]
+            </div>
+            <div style="clear: both;"></div>
+          </li>
+]]></ViewItem>
+            <ViewFooter><![CDATA[
+        </ul>
+    </div>
+</div>
+]]></ViewFooter>
+        </View>
+        <View>
+            <ViewName>List View (EU)</ViewName>
+            <ViewGUID>01450205-9603-4274-8e01-3caf9e3aa48d</ViewGUID>
+            <ViewHeader><![CDATA[
+<link rel="stylesheet" href="//cdn.cheyennehs.org/modules/Spotlight/css/spotlight.min.css"/>
+<style type="text/css">
+    div#persons-page-public ul li div.image {
+        width: 192px;
+        height: 192px;
+    }
+
+    div#persons-page-public ul li p {
+        margin-left: 230px;
+    }
+</style>
+<div id="persons-page-public">
+    <div id="items">
+        <ul class="Indefinite">
+]]></ViewHeader>
+            <ViewItem><![CDATA[
+          <li>
+            <div class="image" style="background-image: url('[$FileLink$]');[$IF ("[$Width$]" != "")$]width:[$Width]px;[$END IF$][$IF ("[$Height$]" != "")$]height:[$Height$]px;[$END IF$]" alt="[$AltText$]"></div>
+            <h3 role="heading" aria-level="2">[$Title$]</h3>
+            <div>
+              [$Body$]
+            </div>
+            <div style="clear: both;"></div>
+          </li>
+]]></ViewItem>
+            <ViewFooter><![CDATA[
+        </ul>
+    </div>
+</div>
+]]></ViewFooter>
+        </View>
+        <View>
+            <ViewName>Page Edit Sidebar View</ViewName>
+            <ViewGUID>ce00e0c2-266f-4cd7-b03b-1fbc80aa0092</ViewGUID>
+            <ViewHeader><![CDATA[
+<div class="sidebar-editing-detail">
+    <div class="bb-buttons bb-buttons-left sidebar-editing-toolbar">
+        <SWCtrl controlname="Button" props="ID:btnNew;Caption:New Item;Class:bb-button bb-button-toolbar bb-button-primary;Disabled:;OnClick:NewButtonSidebarClick('9aa6c953-d475-4a16-a1f4-ea8c27d61660');Size:;Style:;TabIndex:;Tooltip:;UseButtonTag:true;" />
+        <SWCtrl controlname="SortControl" props="ID:SortControl1;Caption:Sort Items;DisplayField:Title;Class:bb-button bb-button-toolbar bb-button-primary;Heading:Sort Spotlights;Tooltip:;UseButtonTag:true;" />
+    </div>
+    <table class="ui-table">
+        <tr class="ui-row-heading">
+            <th>Status</th>
+            <th>Item</th>
+            <th>Actions</th>
+        </tr>
+]]></ViewHeader>
+            <ViewItem><![CDATA[
+        <tr>
+            <td class="ui-cell-active">
+                <SWCTRL controlname="ActivationControl" props="Value:[$Active$]" alt="Change status." />
+            </td>
+            <td class="ui-cell-detail">
+                <div class="ui-article-header">
+                    <h2><SWCTRL controlname="LinkEvent" props="EventType:OnClick;OnClick:EditButtonSidebarClick('2a5dbdc3-4818-43f9-acbf-7d3efd4b89ae');Caption:[$Title$];" /></h2>
+                </div>
+            </td>
+            <td class="ui-cell-actions">
+                <SWCTRL controlname="Button" props="ID:btnEdit;Caption:Edit;Class:bb-button bb-button-list bb-button-primary;Disabled:;OnClick:EditButtonSidebarClick('2a5dbdc3-4818-43f9-acbf-7d3efd4b89ae');Size:;Style:;TabIndex:;Tooltip:;UseButtonTag:true;" />
+                <SWCTRL controlname="Button" props="ID:btnDelete;Caption:Delete;Class:bb-button bb-button-list bb-button-warning;Disabled:;OnClick:DeleteButtonClick('00000000-0000-0000-0000-000000000000');Size:;Style:;TabIndex:;Tooltip:I don't need this record at all anymore.;GrowlMessage:Success! You have deleted your record.;UseButtonTag:true;" />
+            </td>
+        </tr>
+]]></ViewItem>
+            <ViewFooter><![CDATA[
+    </table>
+    <SWCTRL controlname="Paging" props="ID:txtPaging;RecordsPerPage:25" />
+    <SWCTRL controlname="NoRecord" props="Text:We noticed that you don't have any items. Click New Item to get started.;" />
+    <div class="bb-buttons bb-buttons-left sidebar-editing-pin-bottom">
+        <button class="bb-button bb-button-primary" onclick="closeSidebarPanel();" tabindex="0"><span>I'm Done</span></button>
+    </div>
+</div>
+<style type="text/css">
+    .ui-article-header h2 span {
+        font-weight: normal;
+        font-size: 11px;
+    }
+    .ui-article-header h2 a {
+        text-decoration: none;
+        color: #333;
+        padding: 2px 4px 2px 0;
+        font-size: 13px;
+        font-weight: bold;
+    }
+    .ui-article-header h2 a:hover,
+    .ui-article-header h2 a:focus {
+        text-decoration: underline;
+    }
+    #moduleinstanceeditoptions-pnl-detail a[href="#moduleinstanceeditoptions-pnl-sidebar"],
+    #moduleinstanceeditoptions-pnl-main h3[aria-controls="moduleinstanceeditoptions-pnl-sidebar"] {
+        display: none;
+    }
+</style>
+]]></ViewFooter>
+        </View>
+        <View>
+            <ViewName>Page Edit Sidebar New View</ViewName>
+            <ViewGUID>9aa6c953-d475-4a16-a1f4-ea8c27d61660</ViewGUID>
+            <ViewHeader><![CDATA[
+<div class="sidebar-editing-detail">
+    <h1 class="sidebar-editing-heading">Add Item</h1>
+    <div class="bb-form-group">
+        <label for="txtTitle">Title:</label>
+        <SWCtrl controlname="Textbox" props="ID:txtTitle;Class:bb-input bb-input-required required;DatePicker:;Disabled:;ErrorMessage:Oops! You didn’t enter a title.;Format:;OnChange:;MaxLength:500;ReadOnly:;Size:;Style:width;TabIndex:;Tooltip:Title;ValidationType:text;Value:[$Title$];" />
+    </div>
+    <div class="bb-form-group">
+        <SWCtrl controlname="Label" props="ID:lblImage;Caption:Image;Class:bb-label;For:txtFileLink;Style:;" />
+        <input type="text" id="txtFileLink" name="swdata-FileLink" class="bb-input bb-required required" maxlength="500" errormessage="This cannot be blank." validaiontype="text" value="[$FileLink$]" />
+        <SWCtrl controlname="ImageWizard" props="ID:wizImage;ImageFileControl:txtFileLink;AltTextControl:;HeightControl:txtHeight;WidthControl:txtWidth;AlignmentControl:;BorderControl:;EnableCropper:false;Options:Local,Cloud,Existing,Shared;" />
+    </div>
+    <div class="bb-form-group">
+        <SWCtrl controlname="Label" props="ID:lblAltText;Caption:Alternative Text:;Class:bb-label;For:txtAlertText;Style:;" />
+        <SWCtrl controlname="UARollover" props="ID:UARollover1;Message:Entering alternative text ensures that your images are ADA compliant. The text will be read by screen readers and will display when a visitor hovers over your image. There is a 125 character limit.;TargetID:lblAltText;" />
+        <SWCtrl controlname="Textbox" props="ID:txtAltText;Class:bb-input bb-required required;DatePicker:;Disabled:;ErrorMessage:This cannot be blank.;Format:;OnChange:;MaxLength:125;ReadOnly:;Size:;Style:;TabIndex:;Tooltip:AltText;ValidationType:;Value:[$AltText$];DefaultValue:;" />
+    </div>
+    <div class="bb-form-group">
+        <SWCtrl controlname="Label" props="ID:lblWidth;Caption:Width;Class:bb-label;For:txtWidth;Style:;" />
+        <input name="swdata-Width" tabindex="-32768" class="bb-input optional" id="txtWidth" type="text" maxlength="4" value="[$Width$]" errormessage="Please enter a valid number." validationtype="numeric" onblur="ImgResetSize('width');">
+        <input type="hidden" id="hidOldWidth" value="" >
+    </div>
+    <div class="bb-form-group">
+        <SWCtrl controlname="Label" props="ID:lblHeight;Caption:Height;Class:bb-label;For:txtHeight;Style:;" />
+        <input type="text" id="txtHeight" class="bb-input optional" errormessage="Please enter a valid number." maxlength="4" style="" tabindex="" validationtype="numeric" name="swdata-Height" value="[$Height$]" onblur="ImgResetSize('height');">
+        <input type="hidden" id="hidOldHeight" value="">
+    </div>
+    <div class="bb-form-group">
+        <label for="txtEditor">Body:</label>
+        <SWCtrl controlname="SimpleEditor" props="ID:txtSimpleEditor;Mode:1;Width:100%;Height:400;StripInvalidMarkup:false;AdvContextMenu:true;Source:[$Body$];" />
+    </div>
+    <div class="bb-form-group">
+        <label class="bb-label">Tags:<span>Tagging allows you to filter records.</span></label>
+        <SWCtrl controlname="TagsControl" props="CustomTitle:Enter a comma separated list of tags for this record.;" />
+    </div>
+    <div class="bb-form-group">
+        <label class="bb-label">Display Duration</label>
+    </div>
+    <div class="bb-margin-indent-one">
+        <div class="bb-form-group">
+            <label class="bb-label">Start Date:</label>
+            <swctrl controlname="StartDate" props="" />
+            <label class="bb-label">End Date:</label>
+            <swctrl controlname="EndDate" props="" />
+        </div>
+    </div>
+    <div class="bb-form-group">
+        <swctrl controlname="PermissionControl" props="ID:PermissionsControl1;DisplayTitle:true;CustomTitle:Viewers;Description:By default all website visitors can view this record.  You can limit who is able to view it by adding specific users or groups.;NoRecordsMessage:Currently all visitors can view this record." />
+    </div>
+    <div class="bb-form-group">
+        <swctrl controlname="ActiveIndicator" props="" />
+    </div>
+    <div class="bb-buttons bb-buttons-left sidebar-editing-pin-bottom">
+        <SWCtrl controlname="Button" props="ID:btnButton;Caption:Save;Class:bb-button bb-button-primary;Disabled:;OnClick:SaveButtonClick('00000000-0000-0000-0000-000000000000');Size:;Style:;TabIndex:;Tooltip:Save my record.;GrowlMessage:Success! You edited your record.;usebuttontag:true;" />
+        <SWCtrl controlname="Button" props="ID:btnCancel;Caption:Cancel;Class:bb-button;Disabled:;OnClick:CancelButtonClick('00000000-0000-0000-0000-000000000000');Size:;Style:;TabIndex:;Tooltip:I changed my mind so cancel this.;usebuttontag:true;" />
+    </div>
+</div>
+]]></ViewHeader>
+            <ViewItem><![CDATA[]]></ViewItem>
+            <ViewFooter><![CDATA[]]></ViewFooter>
+        </View>
+        <View>
+            <ViewName>Page Edit Sidebar Edit View</ViewName>
+            <ViewGUID>2a5dbdc3-4818-43f9-acbf-7d3efd4b89ae</ViewGUID>
+            <ViewHeader><![CDATA[
+<div class="sidebar-editing-detail">
+  <h1 class="sidebar-editing-heading">Add Item</h1>
+  <div class="bb-form-group">
+    <label for="txtTitle">Title:</label>
+    <SWCtrl controlname="Textbox" props="ID:txtTitle;Class:bb-input bb-input-required required;DatePicker:;Disabled:;ErrorMessage:Oops! You didn’t enter a title.;Format:;OnChange:;MaxLength:500;ReadOnly:;Size:;Style:width;TabIndex:;Tooltip:Title;ValidationType:text;Value:[$Title$];" />
+  </div>
+  <div class="bb-form-group">
+    <SWCtrl controlname="Label" props="ID:lblImage;Caption:Image;Class:bb-label;For:txtFileLink;Style:;" />
+    <input type="text" id="txtFileLink" name="swdata-FileLink" class="bb-input bb-required required" maxlength="500" errormessage="This cannot be blank." validaiontype="text" value="[$FileLink$]" />
+    <SWCtrl controlname="ImageWizard" props="ID:wizImage;ImageFileControl:txtFileLink;AltTextControl:;HeightControl:txtHeight;WidthControl:txtWidth;AlignmentControl:;BorderControl:;EnableCropper:false;Options:Local,Cloud,Existing,Shared;" />
+  </div>
+  <div class="bb-form-group">
+    <SWCtrl controlname="Label" props="ID:lblAltText;Caption:Alternative Text:;Class:bb-label;For:txtAlertText;Style:;" />
+    <SWCtrl controlname="UARollover" props="ID:UARollover1;Message:Entering alternative text ensures that your images are ADA compliant. The text will be read by screen readers and will display when a visitor hovers over your image. There is a 125 character limit.;TargetID:lblAltText;" />
+    <SWCtrl controlname="Textbox" props="ID:txtAltText;Class:bb-input bb-required required;DatePicker:;Disabled:;ErrorMessage:This cannot be blank.;Format:;OnChange:;MaxLength:125;ReadOnly:;Size:;Style:;TabIndex:;Tooltip:AltText;ValidationType:;Value:[$AltText$];DefaultValue:;" />
+  </div>
+  <div class="bb-form-group">
+    <SWCtrl controlname="Label" props="ID:lblWidth;Caption:Width;Class:bb-label;For:txtWidth;Style:;" />
+    <input name="swdata-Width" tabindex="-32768" class="bb-input optional" id="txtWidth" type="text" maxlength="4" value="[$Width$]" errormessage="Please enter a valid number." validationtype="numeric" onblur="ImgResetSize('width');">
+    <input type="hidden" id="hidOldWidth" value="" >
+  </div>
+  <div class="bb-form-group">
+    <SWCtrl controlname="Label" props="ID:lblHeight;Caption:Height;Class:bb-label;For:txtHeight;Style:;" />
+    <input type="text" id="txtHeight" class="bb-input optional" errormessage="Please enter a valid number." maxlength="4" style="" tabindex="" validationtype="numeric" name="swdata-Height" value="[$Height$]" onblur="ImgResetSize('height');">
+    <input type="hidden" id="hidOldHeight" value="">
+  </div>
+  <div class="bb-form-group">
+    <label for="txtEditor">Body:</label>
+    <SWCtrl controlname="SimpleEditor" props="ID:txtSimpleEditor;Mode:1;Width:100%;Height:400;StripInvalidMarkup:false;AdvContextMenu:true;Source:[$Body$];" />
+  </div>
+  <div class="bb-form-group">
+    <label class="bb-label">Tags:<span>Tagging allows you to filter records.</span></label>
+    <SWCtrl controlname="TagsControl" props="CustomTitle:Enter a comma separated list of tags for this record.;" />
+  </div>
+  <div class="bb-form-group">
+    <label class="bb-label">Display Duration</label>
+  </div>
+  <div class="bb-margin-indent-one">
+    <div class="bb-form-group">
+      <label class="bb-label">Start Date:</label>
+      <swctrl controlname="StartDate" props="" />
+      <label class="bb-label">End Date:</label>
+      <swctrl controlname="EndDate" props="" />
+    </div>
+  </div>
+  <div class="bb-form-group">
+    <swctrl controlname="PermissionControl" props="ID:PermissionsControl1;DisplayTitle:true;CustomTitle:Viewers;Description:By default all website visitors can view this record.  You can limit who is able to view it by adding specific users or groups.;NoRecordsMessage:Currently all visitors can view this record." />
+  </div>
+  <div class="bb-form-group">
+    <swctrl controlname="ActiveIndicator" props="" />
+  </div>
+  <div class="bb-buttons bb-buttons-left sidebar-editing-pin-bottom">
+    <SWCtrl controlname="Button" props="ID:btnButton;Caption:Save;Class:bb-button bb-button-primary;Disabled:;OnClick:SaveButtonClick('00000000-0000-0000-0000-000000000000');Size:;Style:;TabIndex:;Tooltip:Save my record.;GrowlMessage:Success! You edited your record.;usebuttontag:true;" />
+    <SWCtrl controlname="Button" props="ID:btnCancel;Caption:Cancel;Class:bb-button;Disabled:;OnClick:CancelButtonClick('00000000-0000-0000-0000-000000000000');Size:;Style:;TabIndex:;Tooltip:I changed my mind so cancel this.;usebuttontag:true;" />
+  </div>
+</div>
+]]></ViewHeader>
+            <ViewItem><![CDATA[]]></ViewItem>
+            <ViewFooter><![CDATA[]]></ViewFooter>
+        </View>
+    </Views>
+</Module>

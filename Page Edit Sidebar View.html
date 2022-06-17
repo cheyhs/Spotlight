@@ -1,0 +1,59 @@
+<!-- BEGIN HEADER -->
+<div class="sidebar-editing-detail">
+    <div class="bb-buttons bb-buttons-left sidebar-editing-toolbar">
+        <SWCtrl controlname="Button" props="ID:btnNew;Caption:New Item;Class:bb-button bb-button-toolbar bb-button-primary;Disabled:;OnClick:NewButtonSidebarClick('9aa6c953-d475-4a16-a1f4-ea8c27d61660');Size:;Style:;TabIndex:;Tooltip:;UseButtonTag:true;" />
+        <SWCtrl controlname="SortControl" props="ID:SortControl1;Caption:Sort Items;DisplayField:Title;Class:bb-button bb-button-toolbar bb-button-primary;Heading:Sort Spotlights;Tooltip:;UseButtonTag:true;" />
+    </div>
+    <table class="ui-table">
+        <tr class="ui-row-heading">
+            <th>Status</th>
+            <th>Item</th>
+            <th>Actions</th>
+        </tr>
+        <!-- END HEADER -->
+        <!-- BEGIN ITEM -->
+        <tr>
+            <td class="ui-cell-active">
+                <SWCTRL controlname="ActivationControl" props="Value:[$Active$]" alt="Change status." />
+            </td>
+            <td class="ui-cell-detail">
+                <div class="ui-article-header">
+                    <h2><SWCTRL controlname="LinkEvent" props="EventType:OnClick;OnClick:EditButtonSidebarClick('2a5dbdc3-4818-43f9-acbf-7d3efd4b89ae');Caption:[$Title$];" /></h2>
+                </div>
+            </td>
+            <td class="ui-cell-actions">
+                <SWCTRL controlname="Button" props="ID:btnEdit;Caption:Edit;Class:bb-button bb-button-list bb-button-primary;Disabled:;OnClick:EditButtonSidebarClick('2a5dbdc3-4818-43f9-acbf-7d3efd4b89ae');Size:;Style:;TabIndex:;Tooltip:;UseButtonTag:true;" />
+                <SWCTRL controlname="Button" props="ID:btnDelete;Caption:Delete;Class:bb-button bb-button-list bb-button-warning;Disabled:;OnClick:DeleteButtonClick('00000000-0000-0000-0000-000000000000');Size:;Style:;TabIndex:;Tooltip:I don't need this record at all anymore.;GrowlMessage:Success! You have deleted your record.;UseButtonTag:true;" />
+            </td>
+        </tr>
+        <!-- END ITEM -->
+        <!-- BEGIN FOOTER -->
+    </table>
+    <SWCTRL controlname="Paging" props="ID:txtPaging;RecordsPerPage:25" />
+    <SWCTRL controlname="NoRecord" props="Text:We noticed that you don't have any items. Click New Item to get started.;" />
+    <div class="bb-buttons bb-buttons-left sidebar-editing-pin-bottom">
+        <button class="bb-button bb-button-primary" onclick="closeSidebarPanel();" tabindex="0"><span>I'm Done</span></button>
+    </div>
+</div>
+<style type="text/css">
+    .ui-article-header h2 span {
+        font-weight: normal;
+        font-size: 11px;
+    }
+    .ui-article-header h2 a {
+        text-decoration: none;
+        color: #333;
+        padding: 2px 4px 2px 0;
+        font-size: 13px;
+        font-weight: bold;
+    }
+    .ui-article-header h2 a:hover,
+    .ui-article-header h2 a:focus {
+        text-decoration: underline;
+    }
+    #moduleinstanceeditoptions-pnl-detail a[href="#moduleinstanceeditoptions-pnl-sidebar"],
+    #moduleinstanceeditoptions-pnl-main h3[aria-controls="moduleinstanceeditoptions-pnl-sidebar"] {
+        display: none;
+    }
+</style>
+<!-- END FOOTER -->

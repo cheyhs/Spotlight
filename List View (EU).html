@@ -1,0 +1,31 @@
+<!-- BEGIN HEADER -->
+<link rel="stylesheet" href="/cms/lib/NV50010907/Centricity/Domain/11//css/spotlight-pack.css"/>
+<style type="text/css">
+    div#persons-page-public ul li div.image {
+        width: 192px;
+        height: 192px;
+    }
+
+    div#persons-page-public ul li p {
+        margin-left: 230px;
+    }
+</style>
+<div id="persons-page-public">
+    <div id="items">
+        <ul class="Indefinite">
+          <!-- END HEADER -->
+          <!-- BEGIN ITEM -->
+          <li>
+            <div class="image" style="background-image: url('[$FileLink$]');[$IF ("[$Width$]" != "")$]width:[$Width]px;[$END IF$][$IF ("[$Height$]" != "")$]height:[$Height$]px;[$END IF$]" alt="[$AltText$]"></div>
+            <h3 role="heading" aria-level="2">[$Title$]</h3>
+            <div>
+              [$Body$]
+            </div>
+            <div style="clear: both;"></div>
+          </li>
+          <!-- END ITEM -->
+          <!-- BEGIN FOOTER -->
+        </ul>
+    </div>
+</div>
+<!-- END FOOTER -->
